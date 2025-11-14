@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import { upload, MAX_FILES_PER_UPLOAD } from '../config/multer.js';
+import { supabase } from '../config/supabase.js';
+import documentParserService from '../services/documentParser.js';
+import caseService from '../services/caseService.js';
+
 const router = express.Router();
-const { upload, MAX_FILES_PER_UPLOAD } = require('../config/multer');
-const { supabase } = require('../config/supabase');
-const documentParserService = require('../services/documentParser');
-const caseService = require('../services/caseService');
 
 const STORAGE_BUCKET = process.env.STORAGE_BUCKET || 'pdfbucket';
 
@@ -138,4 +139,4 @@ router.post('/side-b', upload.array('documents', MAX_FILES_PER_UPLOAD), async (r
   }
 });
 
-module.exports = router;
+export default router;

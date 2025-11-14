@@ -1,4 +1,5 @@
-const multer = require('multer');
+import multer from 'multer';
+import 'dotenv/config';
 
 const MAX_FILE_SIZE = parseInt(process.env.MAX_FILE_SIZE) || 10 * 1024 * 1024;
 const MAX_FILES_PER_UPLOAD = 10;
@@ -25,4 +26,4 @@ const upload = multer({
   }
 });
 
-module.exports = { upload, MAX_FILES_PER_UPLOAD };
+export { upload, MAX_FILES_PER_UPLOAD };

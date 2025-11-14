@@ -1,8 +1,12 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const fs = require('fs').promises;
-const path = require('path');
-const Case = require('../models/Case');
+import 'dotenv/config';
+import mongoose from 'mongoose';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import Case from '../models/Case.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const MONGO_URI = process.env.MONGO_URI;
 const DATA_DIR = path.join(__dirname, '..', 'data', 'cases');

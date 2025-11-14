@@ -1,5 +1,5 @@
-const crypto = require('crypto');
-const Case = require('../models/Case');
+import crypto from 'crypto';
+import Case from '../models/Case.js';
 
 function generateCaseId() {
   return 'case_' + crypto.randomBytes(8).toString('hex') + '_' + Date.now();
@@ -256,7 +256,7 @@ async function searchCases(criteria = {}) {
   }));
 }
 
-module.exports = {
+const caseService = {
   createCase,
   getCase,
   saveCase,
@@ -268,3 +268,5 @@ module.exports = {
   getCaseStatistics,
   searchCases
 };
+
+export default caseService;

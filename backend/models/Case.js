@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const documentSchema = new mongoose.Schema({
   filename: String,
@@ -118,4 +118,4 @@ caseSchema.index({ country: 1 });
 caseSchema.index({ caseType: 1 });
 caseSchema.index({ 'metadata.lastActivity': -1 });
 
-module.exports = mongoose.model('Case', caseSchema);
+export default mongoose.model('Case', caseSchema);

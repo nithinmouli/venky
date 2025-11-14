@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 let genAI = null;
 let model = null;
@@ -262,8 +262,10 @@ Summarize in 2-3 sentences the core legal issues and disputes involved.`;
   }
 }
 
-module.exports = {
+const geminiService = {
   generateVerdict,
   respondToArgument,
   generateCaseSummary
 };
+
+export default geminiService;

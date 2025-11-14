@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import caseService from '../services/caseService.js';
+
 const router = express.Router();
-const caseService = require('../services/caseService');
 
 router.get('/', async (req, res) => {
   try {
@@ -33,4 +34,4 @@ router.get('/stats', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

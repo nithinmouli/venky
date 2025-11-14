@@ -1,5 +1,5 @@
-const pdfParse = require('pdf-parse');
-const mammoth = require('mammoth');
+import pdfParse from 'pdf-parse';
+import mammoth from 'mammoth';
 
 async function parseDocumentFromBuffer(buffer, mimeType) {
   switch (mimeType) {
@@ -44,9 +44,11 @@ function cleanExtractedText(text) {
     .trim();
 }
 
-module.exports = {
+const documentParserService = {
   parseDocumentFromBuffer,
   parsePDFFromBuffer,
   parseWordFromBuffer,
   cleanExtractedText
 };
+
+export default documentParserService;

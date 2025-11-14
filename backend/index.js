@@ -1,20 +1,21 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const multer = require('multer');
-const http = require('http');
-const socketIo = require('socket.io');
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import multer from 'multer';
+import http from 'http';
+import { Server } from 'socket.io';
 
-const connectDB = require('./config/database');
-const uploadRoutes = require('./routes/upload');
-const caseRoutes = require('./routes/case');
-const casesRoutes = require('./routes/cases');
+import connectDB from './config/database.js';
+import uploadRoutes from './routes/upload.js';
+import caseRoutes from './routes/case.js';
+import casesRoutes from './routes/cases.js';
+import caseService from './services/caseService.js';
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, {
+const io = new Server(server, {
   cors: {
     origin: process.env.FRONTEND_URL || "http://localhost:5173",
     methods: ["GET", "POST"]
@@ -40,7 +41,6 @@ app.use('/api/cases', casesRoutes);
 // Stats endpoint
 app.get('/api/stats', async (req, res) => {
   try {
-    const caseService = require('./services/caseService');
     const stats = await caseService.getCaseStatistics();
     res.json(stats);
   } catch (error) {
@@ -81,4 +81,4 @@ server.listen(PORT, () => {
   console.log(`AI Judge Server running on port ${PORT}`);
 });
 
-module.exports = app;
+export default app;

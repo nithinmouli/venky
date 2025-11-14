@@ -1,9 +1,13 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const Case = require('../models/Case');
-const { supabase } = require('../config/supabase');
-const fs = require('fs').promises;
-const path = require('path');
+import 'dotenv/config';
+import mongoose from 'mongoose';
+import Case from '../models/Case.js';
+import { supabase } from '../config/supabase.js';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const MONGO_URI = process.env.MONGO_URI;
 const STORAGE_BUCKET = process.env.STORAGE_BUCKET || 'pdfbucket';

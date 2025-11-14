@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import caseService from '../services/caseService.js';
+import geminiService from '../services/geminiService.js';
+
 const router = express.Router();
-const caseService = require('../services/caseService');
-const geminiService = require('../services/geminiService');
 
 const MAX_ARGUMENTS_PER_SIDE = 5;
 
@@ -160,4 +161,4 @@ router.delete('/:caseId', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
