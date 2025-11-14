@@ -1,4 +1,5 @@
-import pdfParse from 'pdf-parse';
+// Import internal entry to avoid package debug code reading test files
+import pdfParse from 'pdf-parse/lib/pdf-parse.js';
 import mammoth from 'mammoth';
 
 async function parseDocumentFromBuffer(buffer, mimeType) {
