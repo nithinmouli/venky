@@ -41,9 +41,7 @@ const useAIJudgeStore = create(devtools((set, get) => ({
     const socket = io('http://localhost:3001');
     set({ socket });
     
-    socket.on('connect', () => {
-      console.log('Connected to AI Judge server');
-    });
+    socket.on('connect', () => {});
     
     socket.on('verdictRendered', (data) => {
       const { currentCase } = get();
@@ -136,29 +134,18 @@ const useAIJudgeStore = create(devtools((set, get) => ({
   loadCase: async (caseId) => {
     set({ isLoading: true, error: null });
     try {
-      console.log('🔍 Loading case:', caseId);
       const response = await api.get(`/case/${caseId}`);
       const caseData = response.data;
-      
-      console.log('📊 Loaded case data:', {
-        caseId: caseData.caseId,
-        status: caseData.status,
-        sideADocs: caseData.sideA?.documents?.length || 0,
-        sideBDocs: caseData.sideB?.documents?.length || 0,
-        fullData: caseData
-      });
       
       set({
         currentCase: caseData,
         isLoading: false
       });
       
-      // Join the case room for real-time updates
       get().joinCase(caseId);
       
       return caseData;
     } catch (error) {
-      console.error('❌ Error loading case:', error);
       set({
         error: error.response?.data?.error || 'Failed to load case',
         isLoading: false
@@ -214,8 +201,6 @@ const useAIJudgeStore = create(devtools((set, get) => ({
     set({ isUploading: true, uploadProgress: {}, error: null });
     
     try {
-      console.log('🔄 Starting upload:', { caseId, side, filesCount: files.length });
-      
       const formData = new FormData();
       formData.append('caseId', caseId);
       formData.append('description', description);
@@ -225,7 +210,6 @@ const useAIJudgeStore = create(devtools((set, get) => ({
       });
       
       const endpoint = side === 'A' ? '/upload/side-a' : '/upload/side-b';
-      console.log('📡 Uploading to endpoint:', endpoint);
       
       const response = await api.post(endpoint, formData, {
         headers: {
@@ -239,13 +223,8 @@ const useAIJudgeStore = create(devtools((set, get) => ({
         }
       });
       
-      console.log('✅ Upload response:', response.data);
-      
-      // Update current case with new document info
       if (get().currentCase?.caseId === caseId) {
-        console.log('🔄 Refreshing case data...');
-        const updatedCase = await get().loadCase(caseId); // Refresh case data
-        console.log('✅ Updated case:', updatedCase);
+        await get().loadCase(caseId);
       }
       
       set({
@@ -255,7 +234,6 @@ const useAIJudgeStore = create(devtools((set, get) => ({
       
       return response.data;
     } catch (error) {
-      console.error('❌ Error uploading documents:', error);
       set({
         error: error.response?.data?.error || 'Failed to upload documents',
         isUploading: false,
