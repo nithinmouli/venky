@@ -153,28 +153,23 @@ async function addArgument(caseId, argumentData) {
 }
 
 async function getAllCases() {
-  try {
-    const cases = await Case.find()
-      .select('caseId title status country caseType createdAt updatedAt verdict metadata')
-      .sort({ 'metadata.lastActivity': -1 })
-      .lean();
-    
-    return cases.map(caseData => ({
-      caseId: caseData.caseId,
-      title: caseData.title,
-      status: caseData.status,
-      country: caseData.country,
-      caseType: caseData.caseType,
-      createdAt: caseData.createdAt,
-      updatedAt: caseData.updatedAt,
-      hasVerdict: !!caseData.verdict,
-      totalArguments: caseData.metadata?.totalArguments || 0,
-      lastActivity: caseData.metadata?.lastActivity || caseData.updatedAt
-    }));
-  } catch (error) {
-    console.error('Error getting all cases:', error);
-    return [];
-  }
+  const cases = await Case.find()
+    .select('caseId title status country caseType createdAt updatedAt verdict metadata')
+    .sort({ 'metadata.lastActivity': -1 })
+    .lean();
+  
+  return cases.map(caseData => ({
+    caseId: caseData.caseId,
+    title: caseData.title,
+    status: caseData.status,
+    country: caseData.country,
+    caseType: caseData.caseType,
+    createdAt: caseData.createdAt,
+    updatedAt: caseData.updatedAt,
+    hasVerdict: !!caseData.verdict,
+    totalArguments: caseData.metadata?.totalArguments || 0,
+    lastActivity: caseData.metadata?.lastActivity || caseData.updatedAt
+  }));
 }
 
 async function deleteCase(caseId) {
@@ -187,96 +182,78 @@ async function deleteCase(caseId) {
 }
 
 async function getCaseStatistics() {
-  try {
-    const cases = await getAllCases();
+  const cases = await getAllCases();
+  
+  const stats = {
+    totalCases: cases.length,
+    statusBreakdown: {},
+    countryBreakdown: {},
+    typeBreakdown: {},
+    averageArgumentsPerCase: 0,
+    casesWithVerdict: 0,
+    recentActivity: cases.slice(0, 5)
+  };
+
+  let totalArguments = 0;
+
+  cases.forEach(caseData => {
+    stats.statusBreakdown[caseData.status] = (stats.statusBreakdown[caseData.status] || 0) + 1;
+    stats.countryBreakdown[caseData.country] = (stats.countryBreakdown[caseData.country] || 0) + 1;
+    stats.typeBreakdown[caseData.caseType] = (stats.typeBreakdown[caseData.caseType] || 0) + 1;
+    totalArguments += caseData.totalArguments || 0;
     
-    const stats = {
-      totalCases: cases.length,
-      statusBreakdown: {},
-      countryBreakdown: {},
-      typeBreakdown: {},
-      averageArgumentsPerCase: 0,
-      casesWithVerdict: 0,
-      recentActivity: cases.slice(0, 5)
-    };
-
-    let totalArguments = 0;
-
-    cases.forEach(caseData => {
-      stats.statusBreakdown[caseData.status] = (stats.statusBreakdown[caseData.status] || 0) + 1;
-      stats.countryBreakdown[caseData.country] = (stats.countryBreakdown[caseData.country] || 0) + 1;
-      stats.typeBreakdown[caseData.caseType] = (stats.typeBreakdown[caseData.caseType] || 0) + 1;
-      totalArguments += caseData.totalArguments || 0;
-      
-      if (caseData.hasVerdict) {
-        stats.casesWithVerdict++;
-      }
-    });
-
-    if (cases.length > 0) {
-      stats.averageArgumentsPerCase = Math.round((totalArguments / cases.length) * 100) / 100;
+    if (caseData.hasVerdict) {
+      stats.casesWithVerdict++;
     }
+  });
 
-    return stats;
-  } catch (error) {
-    console.error('Error getting case statistics:', error);
-    return {
-      totalCases: 0,
-      statusBreakdown: {},
-      countryBreakdown: {},
-      typeBreakdown: {},
-      averageArgumentsPerCase: 0,
-      casesWithVerdict: 0,
-      recentActivity: []
-    };
+  if (cases.length > 0) {
+    stats.averageArgumentsPerCase = Math.round((totalArguments / cases.length) * 100) / 100;
   }
+
+  return stats;
 }
 
 async function searchCases(criteria = {}) {
-  try {
-    const query = {};
+  const query = {};
 
-    if (criteria.status) {
-      query.status = criteria.status;
-    }
-
-    if (criteria.country) {
-      query.country = { $regex: criteria.country, $options: 'i' };
-    }
-
-    if (criteria.caseType) {
-      query.caseType = criteria.caseType;
-    }
-
-    if (criteria.title) {
-      query.title = { $regex: criteria.title, $options: 'i' };
-    }
-
-    if (criteria.hasVerdict !== undefined) {
-      query.verdict = criteria.hasVerdict === 'true' ? { $ne: null } : null;
-    }
-
-    const cases = await Case.find(query)
-      .select('caseId title status country caseType createdAt updatedAt verdict metadata')
-      .sort({ 'metadata.lastActivity': -1 })
-      .lean();
-
-    return cases.map(caseData => ({
-      caseId: caseData.caseId,
-      title: caseData.title,
-      status: caseData.status,
-      country: caseData.country,
-      caseType: caseData.caseType,
-      createdAt: caseData.createdAt,
-      updatedAt: caseData.updatedAt,
-      hasVerdict: !!caseData.verdict,
-      totalArguments: caseData.metadata?.totalArguments || 0,
-      lastActivity: caseData.metadata?.lastActivity || caseData.updatedAt
-    }));
-  } catch (error) {
-    console.error('Error searching cases:', error);
-    return [];
+  if (criteria.status) {
+    query.status = criteria.status;
   }
+
+  if (criteria.country) {
+    query.country = { $regex: criteria.country, $options: 'i' };
+  }
+
+  if (criteria.caseType) {
+    query.caseType = criteria.caseType;
+  }
+
+  if (criteria.title) {
+    query.title = { $regex: criteria.title, $options: 'i' };
+  }
+
+  if (criteria.hasVerdict !== undefined) {
+    query.verdict = criteria.hasVerdict === 'true' ? { $ne: null } : null;
+  }
+
+  const cases = await Case.find(query)
+    .select('caseId title status country caseType createdAt updatedAt verdict metadata')
+    .sort({ 'metadata.lastActivity': -1 })
+    .lean();
+
+  return cases.map(caseData => ({
+    caseId: caseData.caseId,
+    title: caseData.title,
+    status: caseData.status,
+    country: caseData.country,
+    caseType: caseData.caseType,
+    createdAt: caseData.createdAt,
+    updatedAt: caseData.updatedAt,
+    hasVerdict: !!caseData.verdict,
+    totalArguments: caseData.metadata?.totalArguments || 0,
+    lastActivity: caseData.metadata?.lastActivity || caseData.updatedAt
+  }));
 }
 
 module.exports = {

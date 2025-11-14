@@ -1,17 +1,10 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-/**
- * Gemini AI Service
- * Handles all AI interactions for the AI Judge system
- * Uses Google's Gemini 2.5 Flash model for legal analysis and judgment
- */
-
-// Initialize the AI client and model
 let genAI = null;
 let model = null;
 
 if (!process.env.GEMINI_API_KEY) {
-  console.error('⚠️  Warning: GEMINI_API_KEY not found in environment variables');
+  console.error('Warning: GEMINI_API_KEY not found in environment variables');
 } else {
   genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   model = genAI.getGenerativeModel({ 
@@ -24,11 +17,6 @@ if (!process.env.GEMINI_API_KEY) {
   });
 }
 
-/**
- * Generate initial verdict based on case documents
- * @param {Object} caseData - Complete case data with both sides' documents
- * @returns {Promise<Object>} - AI Judge verdict
- */
 async function generateVerdict(caseData) {
   if (!model) {
     throw new Error('Gemini API not configured. Please set GEMINI_API_KEY environment variable.');
@@ -51,20 +39,11 @@ async function generateVerdict(caseData) {
       country: caseData.country,
       caseType: caseData.caseType
     };
-
   } catch (error) {
-    console.error('Error generating verdict:', error);
     throw new Error(`Failed to generate AI verdict: ${error.message}`);
   }
 }
 
-/**
- * Respond to follow-up arguments from lawyers
- * @param {Object} caseData - Current case data
- * @param {string} side - Side making the argument (A or B)
- * @param {string} argument - The argument text
- * @returns {Promise<Object>} - AI response to the argument
- */
 async function respondToArgument(caseData, side, argument) {
   if (!model) {
     throw new Error('Gemini API not configured. Please set GEMINI_API_KEY environment variable.');
@@ -86,18 +65,11 @@ async function respondToArgument(caseData, side, argument) {
       originalArgument: argument,
       side: side
     };
-
   } catch (error) {
-    console.error('Error responding to argument:', error);
     throw new Error(`Failed to generate AI response: ${error.message}`);
   }
 }
 
-/**
- * Build the prompt for initial verdict generation
- * @param {Object} caseData - Case information
- * @returns {string} - Formatted prompt
- */
 function buildVerdictPrompt(caseData) {
   const sideADocs = formatDocuments(caseData.sideA?.documents || []);
   const sideBDocs = formatDocuments(caseData.sideB?.documents || []);
@@ -144,13 +116,6 @@ Please provide your initial verdict in the following JSON format:
 Render your verdict based on the evidence presented, applying ${caseData.country} law and legal standards.`;
 }
 
-/**
- * Build the prompt for responding to follow-up arguments
- * @param {Object} caseData - Case information
- * @param {string} side - Side making argument
- * @param {string} argument - The argument text
- * @returns {string} - Formatted prompt
- */
 function buildArgumentResponsePrompt(caseData, side, argument) {
   const previousArguments = formatPreviousArguments(caseData.arguments || []);
   const sideName = side === 'A' ? 'Plaintiff' : 'Defendant';
@@ -190,11 +155,6 @@ Please respond in the following JSON format:
 Judge this argument fairly and thoroughly, demonstrating the careful consideration expected in ${caseData.country} courts.`;
 }
 
-/**
- * Format documents for inclusion in prompts
- * @param {Array} documents - Array of document objects
- * @returns {string} - Formatted document text
- */
 function formatDocuments(documents) {
   if (!documents || documents.length === 0) {
     return "No documents submitted.";
@@ -207,11 +167,6 @@ Content Preview: ${truncateText(doc.extractedText, 2000)}
   }).join('\n\n');
 }
 
-/**
- * Format previous arguments for context
- * @param {Array} argumentsList - Array of previous arguments
- * @returns {string} - Formatted arguments text
- */
 function formatPreviousArguments(argumentsList) {
   if (!argumentsList || argumentsList.length === 0) {
     return "No previous arguments in this case.";
@@ -228,24 +183,14 @@ ${arg.aiResponse?.response || 'No response recorded'}
   }).join('\n\n');
 }
 
-/**
- * Parse the structured verdict response from Gemini
- * @param {string} response - Raw AI response
- * @returns {Object} - Parsed verdict object
- */
 function parseVerdictResponse(response) {
   try {
-    // Try to extract JSON from the response
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]);
-      return parsed;
+      return JSON.parse(jsonMatch[0]);
     }
-  } catch (error) {
-    console.error('Error parsing verdict JSON:', error);
-  }
+  } catch (error) {}
 
-  // Fallback: return a structured response based on the raw text
   return {
     decision: "insufficient_evidence",
     reasoning: response,
@@ -258,24 +203,14 @@ function parseVerdictResponse(response) {
   };
 }
 
-/**
- * Parse the structured argument response from Gemini
- * @param {string} response - Raw AI response
- * @returns {Object} - Parsed response object
- */
 function parseArgumentResponse(response) {
   try {
-    // Try to extract JSON from the response
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]);
-      return parsed;
+      return JSON.parse(jsonMatch[0]);
     }
-  } catch (error) {
-    console.error('Error parsing argument response JSON:', error);
-  }
+  } catch (error) {}
 
-  // Fallback: return a structured response based on the raw text
   return {
     response: response,
     verdictChange: "none",
@@ -288,12 +223,6 @@ function parseArgumentResponse(response) {
   };
 }
 
-/**
- * Truncate text to a maximum length while preserving word boundaries
- * @param {string} text - Text to truncate
- * @param {number} maxLength - Maximum length
- * @returns {string} - Truncated text
- */
 function truncateText(text, maxLength = 1000) {
   if (!text || text.length <= maxLength) {
     return text || '';
@@ -309,11 +238,6 @@ function truncateText(text, maxLength = 1000) {
   return truncated + '... [truncated]';
 }
 
-/**
- * Generate case summary for quick reference
- * @param {Object} caseData - Case information
- * @returns {Promise<string>} - Generated summary
- */
 async function generateCaseSummary(caseData) {
   if (!model) {
     throw new Error('Gemini API not configured.');
@@ -334,12 +258,10 @@ Summarize in 2-3 sentences the core legal issues and disputes involved.`;
     const response = await result.response;
     return response.text();
   } catch (error) {
-    console.error('Error generating case summary:', error);
     return 'Case summary generation failed.';
   }
 }
 
-// Export all functions
 module.exports = {
   generateVerdict,
   respondToArgument,
