@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 
 // API base URL
-const API_BASE_URL = 'https://cautious-space-barnacle-jjj45rg5x493pjx4-3001.app.github.dev/api';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 // Create axios instance
 const api = axios.create({

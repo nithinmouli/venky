@@ -36,7 +36,18 @@ app.get('/api/health', (req, res) => {
 app.use('/api/upload', uploadRoutes);
 app.use('/api/case', caseRoutes);
 app.use('/api/cases', casesRoutes);
-app.use('/api/stats', casesRoutes);
+
+// Stats endpoint
+app.get('/api/stats', async (req, res) => {
+  try {
+    const caseService = require('./services/caseService');
+    const stats = await caseService.getCaseStatistics();
+    res.json(stats);
+  } catch (error) {
+    console.error('Get stats error:', error);
+    res.status(500).json({ error: 'Failed to retrieve statistics' });
+  }
+});
 
 io.on('connection', (socket) => {
   socket.on('joinCase', (caseId) => {

@@ -400,8 +400,8 @@ function CaseView() {
               className="btn btn-accent text-lg px-8 py-4"
               disabled={isLoading}
             >
-              <Gavel size={20} />
-              🤖 Analyze Case & Render Verdict
+              
+                Analyze Case & Render Verdict
             </button>
           </div>
         </div>
