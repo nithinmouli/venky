@@ -1,0 +1,28 @@
+{
+  "caseId": "case_2cb17b03fd6b5c9e_1762953760575",
+  "title": "tehhsdghsdghsd",
+  "description": "gnghgh",
+  "country": "Germany",
+  "caseType": "civil",
+  "status": "awaiting_documents",
+  "createdAt": "2025-11-12T13:22:40.575Z",
+  "updatedAt": "2025-11-12T13:43:43.354Z",
+  "sideA": {
+    "description": "",
+    "documents": [],
+    "uploadedAt": "2025-11-12T13:43:37.251Z"
+  },
+  "sideB": {
+    "description": "",
+    "documents": [],
+    "uploadedAt": "2025-11-12T13:43:43.354Z"
+  },
+  "verdict": null,
+  "arguments": [],
+  "metadata": {
+    "totalArguments": 0,
+    "sideAArguments": 0,
+    "sideBArguments": 0,
+    "lastActivity": "2025-11-12T13:43:43.354Z"
+  }
+}

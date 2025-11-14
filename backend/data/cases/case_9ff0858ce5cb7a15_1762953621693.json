@@ -1,0 +1,150 @@
+{
+  "caseId": "case_9ff0858ce5cb7a15_1762953621693",
+  "title": "sdfsg",
+  "description": "sDGfzfgzfbgzsgffg",
+  "country": "India",
+  "caseType": "intellectual_property",
+  "status": "arguments_phase",
+  "createdAt": "2025-11-12T13:20:21.693Z",
+  "updatedAt": "2025-11-12T14:10:43.783Z",
+  "sideA": {
+    "description": "",
+    "documents": [
+      {
+        "filename": "mock_accident_report_and_fir_TEST.pdf",
+        "path": "uploads\\documents-1762956353408-813092181.pdf",
+        "mimetype": "application/pdf",
+        "size": 8572,
+        "extractedText": "SAMPLE — INDEPENDENT TRAFFIC ACCIDENT REPORT & MOCK FIR (Fictional — FOR TESTING ONLY — NOT A REAL / LEGAL DOCUMENT) Report ID: TEST-ACC-2023-0001 Prepared by: Independent Road Safety Unit — Mock Division Date prepared: March 16, 2023 1. INCIDENT SUMMARY Date of incident: March 14, 2023 Time: Approximately 08:30 AM Location: M.G. Road near Lotus Junction, Bengaluru Weather/Visibility: Clear, dry road surface; good daylight visibility 2. PARTIES INVOLVED Driver A (Vehicle 1 / Private Car): Name: Rajesh Kumar (fictional) Age: 34 Vehicle: Maruti Suzuki Swift (Mock reg. KA-09-AB-4567) Seating: Driver only at time of incident Driver B (Vehicle 2 / Bus): Name: Ramesh Singh (fictional) Employer: City Transport Corporation (CTC) — Mock Division Vehicle: City bus (Mock No. KA-01-F-2234) Seating: Driver and two passengers at time of incident 3. WITNESSES Auto driver: Imran Khan (fictional) — provided written statement. CCTV: Traffic camera #MG-03 captured the event. 4. EVIDENCE COLLECTED - CCTV footage (traffic camera MG-03) — includes approach, overtaking maneuver, and collision frame. - Photos of vehicle damage (both vehicles). - Post-collision vehicle position photos. - Police preliminary accident report (Mock copy). - Medical note for Driver A: sprain and bruising (Mock clinic: City Hospital). - Vehicle repair estimate (Mock workshop: Reliable Autos). 5. FACTUAL CHRONOLOGY 1. At ~08:25–08:29, traffic moving at light-to-moderate flow along M.G. Road. 2. An auto-rickshaw stopped partially in the left lane to pick up a passenger. 3. Bus (Vehicle 2) initiated an overtaking maneuver to pass the stationary auto-rickshaw. 4. During the maneuver, bus moved toward the adjacent lane and contacted the rear-left quarter of the car (Vehicle 1). 5. Vehicle 1 was displaced, struck the central divider and came to rest with frontal and left-side damage. 6. Minor injuries reported by Driver A; bus passengers reported no serious injuries. 6. DAMAGE & INJURY SUMMARY Vehicle 1 (Car): - Front bumper deformation, left front door dented, alignment issues. - Estimated repair cost (mock): n1,75,000 Vehicle 2 (Bus): - Minor scrape to right front panel; no structural damage (mock estimate: n15,000) Injuries: - Driver A: sprained wrist, bruising — medical expenses (mock): n25,000 - Bus occupants: no significant injuries reported 7. ANALYSIS (Independent Observer) - Overtaking clearance: CCTV indicates insufficient lateral clearance during bus overtaking maneuver. - Speed: Both vehicles observed to be within posted speed limits at time of collision (approx. 40–45 km/h). - Contributory factors: Possible sudden deceleration by Vehicle 1 is claimed by Driver B in their statement; however, CCTV does not clearly show abrupt braking by Vehicle 1 prior to contact. Vehicle 1’s partial encroachment into adjacent lane cannot be conclusively determined from a single camera angle. - Primary fault indicator: The overtaking bus failed to maintain safe lateral clearance. Contributory negligence by Vehicle 1 cannot be ruled out without additional evidence (e.g., in-vehicle data or additional camera angles, skid marks). 8. CONCLUSION (Opinion for Testing) - Probable primary cause: Unsafe overtaking maneuver by Bus (Vehicle 2) resulting in contact with Car (Vehicle 1). - Probable contributory factor: Possible lane encroachment or lane-discipline lapse by Car (Vehicle 1) — inconclusive on available evidence. - Recommended outcome for civil testing purposes: Assign primary liability to City Transport Corporation (Bus driver) with 70% responsibility; assign 30% contributory negligence to the driver of the private car. This apportionment is for test scenarios only and is not a legal ruling. 9. RECOMMENDATIONS (Mock) 1. Require driver training refresh for bus operator (simulation-based overtaking safety). 2. Improve signage and physical separation where frequent passenger pick-up occurs. 3. Install additional CCTV coverage (different angles) at the junction for clearer reconstructions. 4. For claims processing in test dataset: approve partial compensation to claimant equal to 70% of assessed losses. SAMPLE — MOCK FIRST INFORMATION REPORT (FIR) (Fictional — FOR TESTING ONLY — NOT A REAL / LEGAL DOCUMENT) FIR No.: MOCK/FIR/2023/0314 Police Station: Central Traffic Police Station, Bengaluru (Mock) Date & Time of Report: March 14, 2023 — 09:05 AM Complainant / Informant: Name: Rajesh Kumar (fictional) Age: 34 Address: 12, Maple Avenue, Koramangala, Bengaluru (Mock) Contact: +91-98XXXXXXX (Mock) Relation to incident: Driver of vehicle reporting collision Details of Incident: On March 14, 2023 at approximately 08:30 AM, the complainant reports that while driving his car (Maruti Suzuki Swift, Reg. KA-09-AB-4567) along M.G. Road, near Lotus Junction, a city bus (Reg. KA-01-F-2234) overtook a stationary auto-rickshaw and collided with the complainant's vehicle, causing damage to the car and minor injuries to the complainant. CCTV footage (traffic camera MG-03) and eyewitness statement from a nearby auto driver (Imran Khan) were recorded. The bus driver, Ramesh Singh, claims the complainant slowed suddenly; however preliminary observations indicate insufficient lateral clearance during overtaking. Sections/Alleged Offences: 1. Endangering life or personal safety by rash or negligent driving (Mock charge). 2. Violation of lane discipline / unsafe overtaking (Mock charge). Evidence Recorded: - CCTV footage (MG-03) captured and attached (Mock). - Eyewitness statement of Imran Khan (Mock). - Photographs of vehicle damage (Mock). - Preliminary medical report of complainant (Mock). Action Taken: 1. Parties advised to file civil claim for damages as applicable (Mock). 2. Preliminary inspection conducted; no arrests made as matter appears to be primarily civil with possible traffic violations pending further enquiry (Mock). 3. FIR registered for record and further investigation (Mock). Signatures / Authentication (Mock) Name & Designation: Inspector S. Ramesh (Mock) Police Station Seal: ______________________ (Mock) Date: March 14, 2023 NOTICE: This First Information Report (FIR) is a fictional mock document created solely for testing/training an AI judge system. It is clearly marked as SAMPLE and MUST NOT be used as an official police record, for legal claims, insurance fraud, or to misrepresent facts to any third party. Prepared by: Independent Road Safety Unit — Mock Division Date: March 16, 2023"
+      }
+    ],
+    "uploadedAt": "2025-11-12T14:05:53.600Z"
+  },
+  "sideB": {
+    "description": "",
+    "documents": [
+      {
+        "filename": "mock_accident_report_and_fir_TEST.pdf",
+        "path": "uploads\\documents-1762956351379-916869356.pdf",
+        "mimetype": "application/pdf",
+        "size": 8572,
+        "extractedText": "SAMPLE — INDEPENDENT TRAFFIC ACCIDENT REPORT & MOCK FIR (Fictional — FOR TESTING ONLY — NOT A REAL / LEGAL DOCUMENT) Report ID: TEST-ACC-2023-0001 Prepared by: Independent Road Safety Unit — Mock Division Date prepared: March 16, 2023 1. INCIDENT SUMMARY Date of incident: March 14, 2023 Time: Approximately 08:30 AM Location: M.G. Road near Lotus Junction, Bengaluru Weather/Visibility: Clear, dry road surface; good daylight visibility 2. PARTIES INVOLVED Driver A (Vehicle 1 / Private Car): Name: Rajesh Kumar (fictional) Age: 34 Vehicle: Maruti Suzuki Swift (Mock reg. KA-09-AB-4567) Seating: Driver only at time of incident Driver B (Vehicle 2 / Bus): Name: Ramesh Singh (fictional) Employer: City Transport Corporation (CTC) — Mock Division Vehicle: City bus (Mock No. KA-01-F-2234) Seating: Driver and two passengers at time of incident 3. WITNESSES Auto driver: Imran Khan (fictional) — provided written statement. CCTV: Traffic camera #MG-03 captured the event. 4. EVIDENCE COLLECTED - CCTV footage (traffic camera MG-03) — includes approach, overtaking maneuver, and collision frame. - Photos of vehicle damage (both vehicles). - Post-collision vehicle position photos. - Police preliminary accident report (Mock copy). - Medical note for Driver A: sprain and bruising (Mock clinic: City Hospital). - Vehicle repair estimate (Mock workshop: Reliable Autos). 5. FACTUAL CHRONOLOGY 1. At ~08:25–08:29, traffic moving at light-to-moderate flow along M.G. Road. 2. An auto-rickshaw stopped partially in the left lane to pick up a passenger. 3. Bus (Vehicle 2) initiated an overtaking maneuver to pass the stationary auto-rickshaw. 4. During the maneuver, bus moved toward the adjacent lane and contacted the rear-left quarter of the car (Vehicle 1). 5. Vehicle 1 was displaced, struck the central divider and came to rest with frontal and left-side damage. 6. Minor injuries reported by Driver A; bus passengers reported no serious injuries. 6. DAMAGE & INJURY SUMMARY Vehicle 1 (Car): - Front bumper deformation, left front door dented, alignment issues. - Estimated repair cost (mock): n1,75,000 Vehicle 2 (Bus): - Minor scrape to right front panel; no structural damage (mock estimate: n15,000) Injuries: - Driver A: sprained wrist, bruising — medical expenses (mock): n25,000 - Bus occupants: no significant injuries reported 7. ANALYSIS (Independent Observer) - Overtaking clearance: CCTV indicates insufficient lateral clearance during bus overtaking maneuver. - Speed: Both vehicles observed to be within posted speed limits at time of collision (approx. 40–45 km/h). - Contributory factors: Possible sudden deceleration by Vehicle 1 is claimed by Driver B in their statement; however, CCTV does not clearly show abrupt braking by Vehicle 1 prior to contact. Vehicle 1’s partial encroachment into adjacent lane cannot be conclusively determined from a single camera angle. - Primary fault indicator: The overtaking bus failed to maintain safe lateral clearance. Contributory negligence by Vehicle 1 cannot be ruled out without additional evidence (e.g., in-vehicle data or additional camera angles, skid marks). 8. CONCLUSION (Opinion for Testing) - Probable primary cause: Unsafe overtaking maneuver by Bus (Vehicle 2) resulting in contact with Car (Vehicle 1). - Probable contributory factor: Possible lane encroachment or lane-discipline lapse by Car (Vehicle 1) — inconclusive on available evidence. - Recommended outcome for civil testing purposes: Assign primary liability to City Transport Corporation (Bus driver) with 70% responsibility; assign 30% contributory negligence to the driver of the private car. This apportionment is for test scenarios only and is not a legal ruling. 9. RECOMMENDATIONS (Mock) 1. Require driver training refresh for bus operator (simulation-based overtaking safety). 2. Improve signage and physical separation where frequent passenger pick-up occurs. 3. Install additional CCTV coverage (different angles) at the junction for clearer reconstructions. 4. For claims processing in test dataset: approve partial compensation to claimant equal to 70% of assessed losses. SAMPLE — MOCK FIRST INFORMATION REPORT (FIR) (Fictional — FOR TESTING ONLY — NOT A REAL / LEGAL DOCUMENT) FIR No.: MOCK/FIR/2023/0314 Police Station: Central Traffic Police Station, Bengaluru (Mock) Date & Time of Report: March 14, 2023 — 09:05 AM Complainant / Informant: Name: Rajesh Kumar (fictional) Age: 34 Address: 12, Maple Avenue, Koramangala, Bengaluru (Mock) Contact: +91-98XXXXXXX (Mock) Relation to incident: Driver of vehicle reporting collision Details of Incident: On March 14, 2023 at approximately 08:30 AM, the complainant reports that while driving his car (Maruti Suzuki Swift, Reg. KA-09-AB-4567) along M.G. Road, near Lotus Junction, a city bus (Reg. KA-01-F-2234) overtook a stationary auto-rickshaw and collided with the complainant's vehicle, causing damage to the car and minor injuries to the complainant. CCTV footage (traffic camera MG-03) and eyewitness statement from a nearby auto driver (Imran Khan) were recorded. The bus driver, Ramesh Singh, claims the complainant slowed suddenly; however preliminary observations indicate insufficient lateral clearance during overtaking. Sections/Alleged Offences: 1. Endangering life or personal safety by rash or negligent driving (Mock charge). 2. Violation of lane discipline / unsafe overtaking (Mock charge). Evidence Recorded: - CCTV footage (MG-03) captured and attached (Mock). - Eyewitness statement of Imran Khan (Mock). - Photographs of vehicle damage (Mock). - Preliminary medical report of complainant (Mock). Action Taken: 1. Parties advised to file civil claim for damages as applicable (Mock). 2. Preliminary inspection conducted; no arrests made as matter appears to be primarily civil with possible traffic violations pending further enquiry (Mock). 3. FIR registered for record and further investigation (Mock). Signatures / Authentication (Mock) Name & Designation: Inspector S. Ramesh (Mock) Police Station Seal: ______________________ (Mock) Date: March 14, 2023 NOTICE: This First Information Report (FIR) is a fictional mock document created solely for testing/training an AI judge system. It is clearly marked as SAMPLE and MUST NOT be used as an official police record, for legal claims, insurance fraud, or to misrepresent facts to any third party. Prepared by: Independent Road Safety Unit — Mock Division Date: March 16, 2023"
+      }
+    ],
+    "uploadedAt": "2025-11-12T14:05:51.581Z"
+  },
+  "verdict": {
+    "decision": "insufficient_evidence",
+    "reasoning": "This case is categorized as an 'intellectual_property' matter. However, both the Plaintiff/Side A and the Defendant/Side B have submitted the exact same document, titled 'mock_accident_report_and_fir_TEST.pdf'. The content of this document is a fictional report detailing a traffic accident, explicitly stating it is 'FOR TESTING ONLY — NOT A REAL / LEGAL DOCUMENT'.\n\nCrucially, neither side has provided any description, argument, or explanation whatsoever to connect this traffic accident report to any intellectual property claim, dispute, or defense. There is no mention of copyright, patent, trademark, design rights, trade secrets, or any other form of intellectual property infringement or ownership in the submissions. The evidence presented is entirely irrelevant to the stated case type.\n\nFor a court to adjudicate an intellectual property case, there must be specific claims regarding intellectual property rights and relevant evidence to support or refute those claims. In the absence of any such claims or relevant evidence, and given that the only submitted document pertains to an unrelated and fictional traffic accident, the Court finds itself with insufficient evidence to make any determination regarding an intellectual property dispute. The submissions fail to establish the very existence or nature of an intellectual property conflict.",
+    "keyFindings": [
+      "The case is designated as an 'intellectual_property' matter.",
+      "Both Plaintiff/Side A and Defendant/Side B submitted the identical document: 'mock_accident_report_and_fir_TEST.pdf'.",
+      "The submitted document is a fictional report detailing a traffic accident and explicitly states it is 'FOR TESTING ONLY'.",
+      "No descriptions or arguments were provided by either side to link the submitted document to any intellectual property claim or defense.",
+      "There is a complete absence of any evidence, claims, or arguments pertaining to copyright, patent, trademark, design, or any other form of intellectual property rights."
+    ],
+    "legalPrinciples": [
+      "The fundamental principle that evidence presented must be relevant to the facts in issue (as enshrined in the Indian Evidence Act, 1872).",
+      "The burden of proof lies on the party asserting a claim to provide relevant and admissible evidence to substantiate that claim."
+    ],
+    "damages": "Not applicable, as no intellectual property claim has been established or even articulated.",
+    "notes": "The Court emphasizes the critical importance of submitting evidence and arguments that are directly relevant to the nature of the case. Submitting documents unrelated to the stated case type, especially those explicitly marked as fictional and for testing purposes, does not provide a basis for judicial review or decision-making. Parties are expected to clearly articulate their claims and present pertinent evidence.",
+    "confidence": 1,
+    "openToReconsideration": true,
+    "timestamp": "2025-11-12T14:09:31.089Z",
+    "caseId": "case_9ff0858ce5cb7a15_1762953621693",
+    "country": "India",
+    "caseType": "intellectual_property"
+  },
+  "arguments": [
+    {
+      "side": "A",
+      "argument": "ghfhsth",
+      "aiResponse": {
+        "response": "The Court has carefully considered the new submission from the Plaintiff (Side A), which consists solely of the string \"ghfhsth\".\n\nAs previously articulated in the initial verdict, this case is categorized as an 'intellectual_property' matter. The fundamental issue identified was the complete absence of any description, argument, or explanation connecting the submitted evidence – a fictional traffic accident report – to any intellectual property claim, dispute, or defense. Neither side had provided any content relevant to copyright, patent, trademark, design rights, trade secrets, or any other form of intellectual property.\n\nRegrettably, the Plaintiff's new argument \"ghfhsth\" does not provide any new evidence, legal precedent, or coherent reasoning that addresses the deficiencies highlighted in the previous verdict. It is an unintelligible string of characters that fails to articulate any claim, provide any relevant information, or establish any connection to the intellectual property nature of this case. Under Indian legal standards, arguments presented to the Court must be clear, cogent, and relevant to the matter at hand. A submission of this nature cannot be construed as a legal argument or a piece of evidence.\n\nTherefore, the Court finds that this new submission does not warrant any modification to the initial verdict. The core problem of insufficient and irrelevant evidence, coupled with a complete lack of intellectual property claims or arguments, persists entirely unaddressed.",
+        "verdictChange": "none",
+        "newReasoning": "",
+        "addressedPoints": [
+          "Plaintiff's new argument 'ghfhsth'"
+        ],
+        "remainingConcerns": [
+          "The continued absence of any relevant evidence pertaining to intellectual property rights.",
+          "The lack of any specific claims, arguments, or explanations regarding intellectual property infringement, ownership, or dispute.",
+          "The failure of either party to connect the submitted document (mock_accident_report_and_fir_TEST.pdf) to the intellectual property nature of the case.",
+          "The overall inability to establish the existence or nature of an intellectual property conflict."
+        ],
+        "legalCitations": [],
+        "confidence": 1,
+        "requestsClarification": "The Plaintiff is hereby directed to submit coherent arguments, specific claims, and relevant evidence that directly pertain to the intellectual property nature of this case. The Court requires clear articulation of the intellectual property rights at issue and how they have been infringed or are being disputed, supported by appropriate documentation, for any meaningful adjudication to occur.",
+        "timestamp": "2025-11-12T14:09:52.131Z",
+        "originalArgument": "ghfhsth",
+        "side": "A"
+      },
+      "timestamp": "2025-11-12T14:09:52.131Z",
+      "argumentNumber": 1,
+      "id": "e49d3c0d"
+    },
+    {
+      "side": "B",
+      "argument": "ryewtywetywethywetywe5y",
+      "aiResponse": {
+        "response": "The Court has carefully considered the new submission from the Defendant (Side B), which consists solely of the string \"ryewtywetywethywetywe5y\".\n\nAs previously established and reiterated, this case is categorized as an 'intellectual_property' matter. The fundamental deficiency identified in the initial verdict, and which remains unaddressed, is the complete absence of any description, argument, or explanation connecting the submitted evidence – a fictional traffic accident report – to any intellectual property claim, dispute, or defense. Neither side has provided any content relevant to copyright, patent, trademark, design rights, trade secrets, or any other form of intellectual property. The Plaintiff's previous submission similarly failed to address these core issues.\n\nRegrettably, the Defendant's new argument, \"ryewtywetywethywetywe5y\", mirrors the deficiencies of the Plaintiff's prior submission. It is an unintelligible string of characters that does not constitute a legal argument, provide any new evidence, cite any legal precedent, or offer any coherent reasoning that addresses the fundamental issues highlighted in the previous verdicts. Under Indian legal standards, arguments presented to the Court must be clear, cogent, and relevant to the matter at hand. A submission of this nature cannot be construed as a valid legal argument or a piece of evidence capable of advancing the case or clarifying the dispute.\n\nTherefore, the Court finds that this new submission does not warrant any modification to the initial verdict. The core problem of insufficient and irrelevant evidence, coupled with a complete lack of intellectual property claims or arguments from either side, persists entirely unaddressed. The submissions continue to fail to establish the very existence or nature of an intellectual property conflict, leaving the Court with no basis to adjudicate such a claim.",
+        "verdictChange": "none",
+        "newReasoning": "The new argument from the Defendant is an unintelligible string of characters and does not provide any relevant evidence, legal reasoning, or connection to the intellectual property nature of the case. It fails to address the fundamental deficiencies identified in the initial verdict regarding the absence of intellectual property claims or relevant evidence.",
+        "addressedPoints": [
+          "The unintelligible nature of the Defendant's new argument.",
+          "The argument's failure to provide any new evidence, legal precedent, or coherent reasoning.",
+          "The argument's failure to connect to the intellectual property nature of the case."
+        ],
+        "remainingConcerns": [
+          "The complete absence of any coherent intellectual property claims or arguments from either Side A or Side B.",
+          "The continued submission of irrelevant and unintelligible content by both parties.",
+          "The lack of any relevant evidence pertaining to an intellectual property dispute."
+        ],
+        "legalCitations": [
+          "Principles of evidence and legal argumentation under Indian law, requiring clarity, cogency, and relevance."
+        ],
+        "confidence": 1,
+        "requestsClarification": "The Court reiterates its request for both Side A and Side B to submit clear, cogent arguments and relevant evidence that specifically address the intellectual property nature of this case, if they wish for the Court to proceed with adjudication. Submissions must articulate specific intellectual property claims (e.g., copyright infringement, patent dispute, trademark violation) and provide evidence pertinent to such claims.",
+        "timestamp": "2025-11-12T14:10:21.400Z",
+        "originalArgument": "ryewtywetywethywetywe5y",
+        "side": "B"
+      },
+      "timestamp": "2025-11-12T14:10:21.400Z",
+      "argumentNumber": 1,
+      "id": "f3d85cd8"
+    },
+    {
+      "side": "A",
+      "argument": "ppuip[u",
+      "aiResponse": {
+        "response": "The Court has carefully considered the new submission from the Plaintiff (Side A), which consists solely of the string \"ppuip[u\".",
+        "verdictChange": "none",
+        "newReasoning": null,
+        "addressedPoints": [
+          "The Plaintiff's latest submission: \"ppuip[u\""
+        ],
+        "remainingConcerns": [
+          "The fundamental absence of any description, argument, or explanation connecting the submitted evidence (fictional traffic accident report) to any intellectual property claim, dispute, or defense.",
+          "The complete lack of specific claims regarding copyright, patent, trademark, design rights, trade secrets, or any other form of intellectual property infringement or ownership.",
+          "The continued irrelevance of all submitted 'arguments' to the stated case type of intellectual property."
+        ],
+        "legalCitations": [],
+        "confidence": 1,
+        "requestsClarification": "The Court reiterates its previous requests for clear, cogent, and relevant arguments or evidence that directly pertain to an intellectual property dispute. Specifically, both sides are required to articulate the nature of the intellectual property claim, the rights asserted, and how the submitted evidence, or any new evidence, supports or refutes these claims.",
+        "timestamp": "2025-11-12T14:10:43.781Z",
+        "originalArgument": "ppuip[u",
+        "side": "A"
+      },
+      "timestamp": "2025-11-12T14:10:43.781Z",
+      "argumentNumber": 2,
+      "id": "9ef1c916"
+    }
+  ],
+  "metadata": {
+    "totalArguments": 3,
+    "sideAArguments": 2,
+    "sideBArguments": 1,
+    "lastActivity": "2025-11-12T14:10:43.783Z"
+  }
+}
