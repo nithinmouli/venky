@@ -3,17 +3,6 @@ const path = require('path');
 const pdfParse = require('pdf-parse');
 const mammoth = require('mammoth');
 
-/**
- * Document Parser Service
- * Extracts text from various file formats: PDF, DOCX, DOC, TXT
- */
-
-/**
- * Main function to parse documents based on MIME type
- * @param {string} filePath - Path to the file
- * @param {string} mimeType - MIME type of the file
- * @returns {Promise<string>} - Extracted text
- */
 async function parseDocument(filePath, mimeType) {
   try {
     switch (mimeType) {
@@ -36,17 +25,42 @@ async function parseDocument(filePath, mimeType) {
   }
 }
 
-/**
- * Parse PDF files
- * @param {string} filePath - Path to PDF file
- * @returns {Promise<string>} - Extracted text
- */
+async function parseDocumentFromBuffer(buffer, mimeType) {
+  try {
+    switch (mimeType) {
+      case 'application/pdf':
+        return await parsePDFFromBuffer(buffer);
+      
+      case 'application/msword':
+      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        return await parseWordFromBuffer(buffer);
+      
+      case 'text/plain':
+        return cleanExtractedText(buffer.toString('utf8'));
+      
+      default:
+        throw new Error(`Unsupported file type: ${mimeType}`);
+    }
+  } catch (error) {
+    console.error(`Error parsing document buffer:`, error);
+    throw new Error(`Failed to parse document: ${error.message}`);
+  }
+}
+
 async function parsePDF(filePath) {
   try {
     const dataBuffer = await fs.readFile(filePath);
-    console.log(`Reading PDF file: ${filePath}, size: ${dataBuffer.length} bytes`);
+    return await parsePDFFromBuffer(dataBuffer);
+  } catch (error) {
+    console.error(`PDF parsing error for ${filePath}:`, error);
+    throw new Error(`PDF parsing failed: ${error.message}`);
+  }
+}
+
+async function parsePDFFromBuffer(dataBuffer) {
+  try {
+    console.log(`Reading PDF buffer, size: ${dataBuffer.length} bytes`);
     
-    // Use pdf-parse directly as a function
     const data = await pdfParse(dataBuffer);
     console.log(`PDF parsed successfully: ${data.numpages} pages, ${data.text.length} characters`);
     
@@ -54,21 +68,14 @@ async function parsePDF(filePath) {
       throw new Error('No text content found in PDF');
     }
     
-    // Clean up the text
     const cleanedText = cleanExtractedText(data.text);
-    
     return cleanedText;
   } catch (error) {
-    console.error(`PDF parsing error for ${filePath}:`, error);
+    console.error(`PDF buffer parsing error:`, error);
     throw new Error(`PDF parsing failed: ${error.message}`);
   }
 }
 
-/**
- * Parse Word documents (DOC, DOCX)
- * @param {string} filePath - Path to Word file
- * @returns {Promise<string>} - Extracted text
- */
 async function parseWord(filePath) {
   try {
     const result = await mammoth.extractRawText({ path: filePath });
@@ -77,14 +84,30 @@ async function parseWord(filePath) {
       throw new Error('No text content found in Word document');
     }
 
-    // Log any warnings from mammoth
     if (result.messages && result.messages.length > 0) {
       console.warn('Word document parsing warnings:', result.messages);
     }
 
-    // Clean up the text
     const cleanedText = cleanExtractedText(result.value);
+    return cleanedText;
+  } catch (error) {
+    throw new Error(`Word document parsing failed: ${error.message}`);
+  }
+}
+
+async function parseWordFromBuffer(buffer) {
+  try {
+    const result = await mammoth.extractRawText({ buffer: buffer });
     
+    if (!result.value || result.value.trim().length === 0) {
+      throw new Error('No text content found in Word document');
+    }
+
+    if (result.messages && result.messages.length > 0) {
+      console.warn('Word document parsing warnings:', result.messages);
+    }
+
+    const cleanedText = cleanExtractedText(result.value);
     return cleanedText;
   } catch (error) {
     throw new Error(`Word document parsing failed: ${error.message}`);
@@ -242,11 +265,13 @@ async function extractMetadata(filePath, mimeType) {
   return metadata;
 }
 
-// Export all functions
 module.exports = {
   parseDocument,
+  parseDocumentFromBuffer,
   parsePDF,
+  parsePDFFromBuffer,
   parseWord,
+  parseWordFromBuffer,
   parseText,
   cleanExtractedText,
   getFileInfo,
